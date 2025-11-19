@@ -31,4 +31,5 @@ run_with_log() {
 }
 
 # 调用函数
-run_with_log ./queen_data_preprocess/preprocess2render.sh /home/zzg/data/CV/dynerf/cut_roasted_beef 1
+run_with_log ./queen_data_preprocess/train2render.sh /home/zzg/data/CV/dynerf/cut_roasted_beef 1
+#run_with_log ./queen_data_preprocess/preprocess2render.sh /home/zzg/data/CV/dynerf/cut_roasted_beef 1

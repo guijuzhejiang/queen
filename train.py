@@ -175,7 +175,7 @@ def training(dataset: ModelParams, opt: OptimizationParams, pipe: PipelineParams
                     print("Using DA2 model")
                     gt_image_255_int = (gt_image * 255.0).round().astype(np.uint8)
                     prediction = depth_model.infer_image(gt_image_255_int, args.da2_input_size)
-                    prediction = prediction * 10
+                    # prediction = prediction * 10
                 else:
                     print("Invalid depth model type")
                 camera.gt_depth = torch.tensor(prediction).cuda()
@@ -488,7 +488,7 @@ def training(dataset: ModelParams, opt: OptimizationParams, pipe: PipelineParams
         frame_start_io = time.time()
 
         # Start training iteration loop for current frame
-        for iteration in range(first_iter, opt.iterations + 1):        
+        for iteration in range(first_iter, opt.iterations + 1):         #opt.iterations:9500
 
             if enable_debug:
                 print(f"DEBUG: started iteration {iteration}")
